@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="PayPalTestSuite" verbose="1" thread-count="1" parallel="tests">
+    <test name="PayPalSmokeTest">
+
+        <classes>
+            <class name="tests.GuestCheckoutTests"/>
+            <class name="tests.LoginTests"/>
+        </classes>
+
+    </test>
+</suite>
