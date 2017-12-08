@@ -58,6 +58,7 @@ public class ShippingPage extends Page{
     }
 
     public void goToBillingPage() {
+        sleep(3000);
         web.waitForElementIsClickable("ContinueToBillingButton");
         web.clickButton("ContinueToBillingButton");
         web.scrollPageToElement("CardNameField");

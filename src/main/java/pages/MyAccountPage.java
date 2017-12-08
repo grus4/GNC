@@ -13,7 +13,7 @@ public class MyAccountPage extends Page{
 
 
     public boolean isLogoutButtonAvailable() {
-        if(web.isElementVisibleAndClickable("LogOutButton")) {
+        if(web.isElementVisibleAndClickable("LogoutLinkInMyAccount")) {
             log.info("A User is logged in to the Account");
             return true;
         } else {
@@ -22,5 +22,19 @@ public class MyAccountPage extends Page{
             return false;
         }
 
+    }
+
+    public void goToMyAddressesPage() {
+        web.waitForElementIsClickable("AddressesLink");
+        web.clickOnElement("AddressesLink");
+        web.waitForElementIsVisible("CreateNewAddressButton");
+        web.waitForElementIsClickable("CreateNewAddressButton");
+
+        if(web.isElementVisibleAndClickable("CreateNewAddressButton")) {
+            log.info("Switching to the Addresses page was correct");
+        } else {
+            log.info("Switching to the Addresses page was INCORRECT!\n");
+            Assert.fail("Switching to the Addresses page was INCORRECT!");
+        }
     }
 }

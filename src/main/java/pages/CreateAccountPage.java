@@ -36,11 +36,7 @@ public class CreateAccountPage extends Page{
     }
 
     public void clickSaveButton() {
-        web.clickButton("SaveButton");
-        web.waitForElementIsVisible("MyAccountIcon");
-        web.waitForElementIsClickable("MyAccountIcon");
-        web.clickButton("MyAccountIcon");
-
+        web.clickOnElement("SaveButton");
 
         web.waitForElementIsVisible("LogoutLinkInMyAccount");
         web.waitForElementIsClickable("LogoutLinkInMyAccount");
@@ -208,7 +204,7 @@ public class CreateAccountPage extends Page{
 
     public void assertFormValidation_with_IncorrectPasswordLength() {
         if(web.isElementVisibleAndClickable("ErrorMessageForIncorrectPasswordLength")
-                && web.getElementText("ErrorMessageForIncorrectPasswordLength").equals("8 - 255 characters")){
+                && web.getElementText("ErrorMessageForIncorrectPasswordLength").equals("8 - 50 characters")){
             log.info("Error message for incorrect Password length is displayed");
         } else {
             log.error("Error message for incorrect Password length is displayed INCORRECTLY!" + "\n"
@@ -254,5 +250,13 @@ public class CreateAccountPage extends Page{
 
     public void selectGander(String gender) {
         web.selectFromDropDownListByVisibleText("GenderDropDownField_on_Create_Account_Page", gender);
+    }
+
+    public void logoutByclickingLogoutLink() {
+        web.clickOnElement("LogoutLinkInMyAccount");
+    }
+
+    public void submitForm() {
+        web.clickOnElement("SaveButton");
     }
 }

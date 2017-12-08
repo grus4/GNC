@@ -22,7 +22,7 @@ public class Fixture extends ExtentManager {
 
     //Looks not soo good
     private static final String IMPLICIT_WAIT = PropertyLoader.loadProperty("wait.timeout");
-    protected static final String EMAIL = PropertyLoader.loadProperty("user.email");
+    public static final String EMAIL = PropertyLoader.loadProperty("user.email");
     protected static final String PASSWORD = PropertyLoader.loadProperty("user.pass");
     protected static final String INVALID_EMAIL_MISSING_AT = PropertyLoader.loadProperty("invalid.email.missing.at");
     protected static final String INVALID_EMAIL_MISSING_ADDRESS = PropertyLoader.loadProperty("invalid.email.missing.address");
@@ -71,6 +71,7 @@ public class Fixture extends ExtentManager {
     protected static final String GENDER = PropertyLoader.loadProperty("gender");
     protected static final String BIRTHDAY_MONTH = PropertyLoader.loadProperty("birthday.month");
     protected static final String BIRTHDAY_YEAR = PropertyLoader.loadProperty("birthday.year");
+    public static final String ADDRESS_NAME = PropertyLoader.loadProperty("address.name");
 
     public ExtentTest extentTest;
 

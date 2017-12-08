@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class LoginTests extends Fixture {
 
 
-    @Test
+    @Test(priority = 1)
     public void loginWithValidData() {
         extentTest = extentReports
                 .startTest("loginWithValidData")
@@ -129,7 +129,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void invalidDataValidationForEmailFieldWithTwoAt() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForEmailFieldWithTwoAt")
@@ -149,7 +149,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void invalidDataValidationForEmailFieldSpecialCharacters() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForEmailFieldSpecialCharacters")
@@ -170,7 +170,7 @@ public class LoginTests extends Fixture {
     }
 
 
-    @Test
+    @Test(enabled = false)
     public void invalidDataValidationForPasswordField() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForPasswordField")
@@ -190,7 +190,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void invalidDataValidationForEmailAndPasswordFields(){
         extentTest = extentReports
                 .startTest("invalidDataValidationForEmailAndPasswordFields")

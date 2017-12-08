@@ -22,6 +22,7 @@ public class GNC {
     public ReviewPage reviewPage;
     public OrderReceiptPage orderReceiptPage;
     public VariationPDP variationPDP;
+    public MyAddressesPage myAddressesPage;
 
     public GNC(WebDriverWrapper webDriverWrapper) {
         web = new WebElementsActions(webDriverWrapper);
@@ -39,6 +40,7 @@ public class GNC {
         reviewPage = new ReviewPage(webDriverWrapper);
         orderReceiptPage = new OrderReceiptPage(webDriverWrapper);
         variationPDP = new VariationPDP(webDriverWrapper);
+        myAddressesPage = new MyAddressesPage(webDriverWrapper);
     }
 
 

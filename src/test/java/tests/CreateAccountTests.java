@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 public class CreateAccountTests extends Fixture {
 
 
-    @Test
+    @Test(priority = 1)
     public void createAccountWithValidData() {
         extentTest = extentReports
                 .startTest("createAccountWithValidData")
@@ -48,15 +48,15 @@ public class CreateAccountTests extends Fixture {
         gnc.createAccountPage.selectGander(GENDER);
         extentTest.log(LogStatus.INFO, "Select gender from the drop down field");
         gnc.createAccountPage.clickSaveButton();
-        extentTest.log(LogStatus.INFO, "Click on the Apply button");
+        extentTest.log(LogStatus.INFO, "Click on the Save button");
         Assert.assertTrue(gnc.myAccountPage.isLogoutButtonAvailable(), "New account is not created");
         extentTest.log(LogStatus.INFO, "A new Account has been created successfully");
-        gnc.header.logout();
+        gnc.createAccountPage.logoutByclickingLogoutLink();
         extentTest.log(LogStatus.INFO, "Log out");
 
     }
 
-    @Test
+    @Test(priority = 2)
     public void createAccountFormValidation_EmptyFields() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_EmptyFields")
@@ -65,15 +65,15 @@ public class CreateAccountTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Open Site Genesis Home Page");
         gnc.header.goToCreateAccountPage();
         extentTest.log(LogStatus.INFO, "Switching to Create Account page");
-        gnc.createAccountPage.clickSaveButton();
-        extentTest.log(LogStatus.INFO, "Click on the Apply button");
+        gnc.createAccountPage.submitForm();
+        extentTest.log(LogStatus.INFO, "Click on the Save button");
         gnc.createAccountPage.assertValidationForAllEmptyFields();
         extentTest.log(LogStatus.INFO, "Error message is displayed under each empty field");
         gnc.createAccountPage.deleteAllCookies();
     }
 
 
-    @Test
+    @Test(priority = 3)
     public void createAccountFormValidation_Re_RegisterTheSameUser() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_Re_RegisterTheSameUser")
@@ -94,8 +94,26 @@ public class CreateAccountTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Fill in the Password field with valid data");
         gnc.createAccountPage.fillConfirmPasswordField(PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in the Confirm password field with valid data");
-        gnc.createAccountPage.clickSaveButton();
-        extentTest.log(LogStatus.INFO, "Click on the Apply button");
+        gnc.createAccountPage.fillAddress_1_Field(ADDRESS_1);
+        extentTest.log(LogStatus.INFO, "Fill in the address field #1");
+        gnc.createAccountPage.fillCityField(CITY);
+        extentTest.log(LogStatus.INFO, "Fill in the city field");
+        gnc.createAccountPage.selectState(STATE);
+        extentTest.log(LogStatus.INFO, "Select state from the drop down field");
+        gnc.createAccountPage.fillZipField(ZIP);
+        extentTest.log(LogStatus.INFO, "Fill in the zip field");
+        gnc.createAccountPage.fillPhoneField(PHONE);
+        extentTest.log(LogStatus.INFO, "Fill in the phone field");
+        gnc.createAccountPage.selectBirthdayMonth(BIRTHDAY_MONTH);
+        extentTest.log(LogStatus.INFO, "Select a month from the drop down field");
+        gnc.createAccountPage.selectBirthDay(DAY);
+        extentTest.log(LogStatus.INFO, "Select a day from the drop down field");
+        gnc.createAccountPage.selectBirthdayYear(BIRTHDAY_YEAR);
+        extentTest.log(LogStatus.INFO, "Select a year from the drop down field");
+        gnc.createAccountPage.selectGander(GENDER);
+        extentTest.log(LogStatus.INFO, "Select gender from the drop down field");
+        gnc.createAccountPage.submitForm();
+        extentTest.log(LogStatus.INFO, "Click on the Save button");
         gnc.createAccountPage.assertFormValidation_Re_registerTheSameUser();
         extentTest.log(LogStatus.INFO, "Username already taken message is displayed correctly");
         gnc.createAccountPage.deleteAllCookies();
@@ -122,8 +140,26 @@ public class CreateAccountTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Fill in the Password field with valid data");
         gnc.createAccountPage.fillConfirmPasswordField(PASSWORD);
         extentTest.log(LogStatus.INFO, "Fill in the Confirm password field with valid data");
-        gnc.createAccountPage.clickSaveButton();
-        extentTest.log(LogStatus.INFO, "Click on the Apply button");
+        gnc.createAccountPage.fillAddress_1_Field(ADDRESS_1);
+        extentTest.log(LogStatus.INFO, "Fill in the address field #1");
+        gnc.createAccountPage.fillCityField(CITY);
+        extentTest.log(LogStatus.INFO, "Fill in the city field");
+        gnc.createAccountPage.selectState(STATE);
+        extentTest.log(LogStatus.INFO, "Select state from the drop down field");
+        gnc.createAccountPage.fillZipField(ZIP);
+        extentTest.log(LogStatus.INFO, "Fill in the zip field");
+        gnc.createAccountPage.fillPhoneField(PHONE);
+        extentTest.log(LogStatus.INFO, "Fill in the phone field");
+        gnc.createAccountPage.selectBirthdayMonth(BIRTHDAY_MONTH);
+        extentTest.log(LogStatus.INFO, "Select a month from the drop down field");
+        gnc.createAccountPage.selectBirthDay(DAY);
+        extentTest.log(LogStatus.INFO, "Select a day from the drop down field");
+        gnc.createAccountPage.selectBirthdayYear(BIRTHDAY_YEAR);
+        extentTest.log(LogStatus.INFO, "Select a year from the drop down field");
+        gnc.createAccountPage.selectGander(GENDER);
+        extentTest.log(LogStatus.INFO, "Select gender from the drop down field");
+        gnc.createAccountPage.submitForm();
+        extentTest.log(LogStatus.INFO, "Click on the Save button");
         gnc.createAccountPage.assertFormValidation_with_DifferentEmail_in_Email__and_ConfirmEmail_Fields();
         extentTest.log(LogStatus.INFO, "Mismatching passwords message is displayed correctly");
         gnc.createAccountPage.deleteAllCookies();
@@ -149,8 +185,26 @@ public class CreateAccountTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Fill in the Password field with valid data");
         gnc.createAccountPage.fillConfirmPasswordField(INVALID_PASSWORD);
         extentTest.log(LogStatus.INFO, "Enter a password that differs from the password entered in the Email field");
-        gnc.createAccountPage.clickSaveButton();
-        extentTest.log(LogStatus.INFO, "Click on the Apply button");
+        gnc.createAccountPage.fillAddress_1_Field(ADDRESS_1);
+        extentTest.log(LogStatus.INFO, "Fill in the address field #1");
+        gnc.createAccountPage.fillCityField(CITY);
+        extentTest.log(LogStatus.INFO, "Fill in the city field");
+        gnc.createAccountPage.selectState(STATE);
+        extentTest.log(LogStatus.INFO, "Select state from the drop down field");
+        gnc.createAccountPage.fillZipField(ZIP);
+        extentTest.log(LogStatus.INFO, "Fill in the zip field");
+        gnc.createAccountPage.fillPhoneField(PHONE);
+        extentTest.log(LogStatus.INFO, "Fill in the phone field");
+        gnc.createAccountPage.selectBirthdayMonth(BIRTHDAY_MONTH);
+        extentTest.log(LogStatus.INFO, "Select a month from the drop down field");
+        gnc.createAccountPage.selectBirthDay(DAY);
+        extentTest.log(LogStatus.INFO, "Select a day from the drop down field");
+        gnc.createAccountPage.selectBirthdayYear(BIRTHDAY_YEAR);
+        extentTest.log(LogStatus.INFO, "Select a year from the drop down field");
+        gnc.createAccountPage.selectGander(GENDER);
+        extentTest.log(LogStatus.INFO, "Select gender from the drop down field");
+        gnc.createAccountPage.submitForm();
+        extentTest.log(LogStatus.INFO, "Click on the Save button");
         gnc.createAccountPage.assertFormValidation_with_DifferentPassword_And_ConfirmPassword();
         extentTest.log(LogStatus.INFO, "Mismatching passwords message is displayed correctly");
         gnc.createAccountPage.deleteAllCookies();
@@ -175,8 +229,26 @@ public class CreateAccountTests extends Fixture {
         extentTest.log(LogStatus.INFO, "Enter an invalid password length in the Password field");
         gnc.createAccountPage.fillConfirmPasswordField(INVALID_PASSWORD_LENGTH);
         extentTest.log(LogStatus.INFO, "Enter an invalid password length in the Confirm Password field");
-        gnc.createAccountPage.clickSaveButton();
-        extentTest.log(LogStatus.INFO, "Click on the Apply button");
+        gnc.createAccountPage.fillAddress_1_Field(ADDRESS_1);
+        extentTest.log(LogStatus.INFO, "Fill in the address field #1");
+        gnc.createAccountPage.fillCityField(CITY);
+        extentTest.log(LogStatus.INFO, "Fill in the city field");
+        gnc.createAccountPage.selectState(STATE);
+        extentTest.log(LogStatus.INFO, "Select state from the drop down field");
+        gnc.createAccountPage.fillZipField(ZIP);
+        extentTest.log(LogStatus.INFO, "Fill in the zip field");
+        gnc.createAccountPage.fillPhoneField(PHONE);
+        extentTest.log(LogStatus.INFO, "Fill in the phone field");
+        gnc.createAccountPage.selectBirthdayMonth(BIRTHDAY_MONTH);
+        extentTest.log(LogStatus.INFO, "Select a month from the drop down field");
+        gnc.createAccountPage.selectBirthDay(DAY);
+        extentTest.log(LogStatus.INFO, "Select a day from the drop down field");
+        gnc.createAccountPage.selectBirthdayYear(BIRTHDAY_YEAR);
+        extentTest.log(LogStatus.INFO, "Select a year from the drop down field");
+        gnc.createAccountPage.selectGander(GENDER);
+        extentTest.log(LogStatus.INFO, "Select gender from the drop down field");
+        gnc.createAccountPage.submitForm();
+        extentTest.log(LogStatus.INFO, "Click on the Save button");
         gnc.createAccountPage.assertFormValidation_with_IncorrectPasswordLength();
         extentTest.log(LogStatus.INFO, "Error message for incorrect Password length is displayed correctly");
         gnc.createAccountPage.deleteAllCookies();

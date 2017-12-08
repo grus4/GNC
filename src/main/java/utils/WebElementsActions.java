@@ -26,9 +26,9 @@ public class WebElementsActions {
      */
     public WebElementsActions(WebDriverWrapper driver) {
         this.webDriverWrapper = driver;
-        waitForElement = new WebDriverWait(driver, Long.parseLong(EXPLICIT_WAIT));
-        random = new Random();
-    }
+    waitForElement = new WebDriverWait(driver, Long.parseLong(EXPLICIT_WAIT));
+    random = new Random();
+}
 
 
     /**
@@ -428,7 +428,24 @@ public class WebElementsActions {
      */
     public void waitForElementIsVisible(String elementLocator) {
         waitForElement.until(ExpectedConditions.visibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
-        log.info("WaitForElement _" + elementLocator + "_ Present");
+        log.info("WaitForElement _" + elementLocator + "_ is Visible");
+    }
+
+    /**
+     * Waiting during specified time till the element will be clickable for user.
+     * The method is used for checking that an element is present on the DOM of a page and visible.
+     * Visibility means that the element is not only displayed but also has a height and width that is greater than 0.
+     *
+     * @param elementLocator
+     *        String descriptive name of the element.
+     *
+     * @param timeOutInS
+     *        int Time(seconds) for waiting of the element.
+     */
+    public void waitForElementIsVisible(String elementLocator, int timeOutInS) {
+        WebDriverWait wait = new WebDriverWait(webDriverWrapper, timeOutInS);
+        waitForElement.until(ExpectedConditions.visibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
+        log.info("WaitForElement _" + elementLocator + "_ is Visible");
     }
 
     /**
@@ -509,6 +526,17 @@ public class WebElementsActions {
         String newEmail = "Test_" + getRandom() + inputEmail;
 
         return newEmail;
+    }
+
+    /**
+     * This method submits form using submit() method of the Selenium WebDriver
+     *
+     * @param elementLocator
+     *        String descriptive name of the element.
+     */
+    public void submitForm(String elementLocator) {
+        webDriverWrapper.findElement(UIMappingSingleton.ui(elementLocator)).submit();
+        log.info("Click on Element : " + elementLocator);
     }
 
 

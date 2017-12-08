@@ -5,7 +5,10 @@
 
         <classes>
             <class name="tests.GuestCheckoutTests"/>
+            <class name="tests.CreateAccountTests"/>
             <class name="tests.LoginTests"/>
+            <class name="tests.MyAddressesTests"/>
+            <class name="tests.CheckoutRegisteredUser"/>
         </classes>
 
     </test>
