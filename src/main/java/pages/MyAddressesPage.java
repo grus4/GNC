@@ -58,13 +58,13 @@ public class MyAddressesPage extends Page {
     public void saveNewAddress() {
         web.clickOnElement("ApplyButtonOnCreateAddressForm");
         web.waitForElementIsVisible("EditAddressLink", 10);
+        web.waitForElementIsVisible("DeleteLink", 10);
     }
 
     public void  assertAddedAddress() {
         if(web.getElementText("AddressTitle").equals(PropertyLoader.loadProperty("address.name"))&&
-                web.getElementText("FirstNameLastName").equals(PropertyLoader.loadProperty("first.name") + " " + PropertyLoader.loadProperty("last.name"))&&
-                web.isElementVisibleAndClickable("EditAddressLink")&&
-                web.isElementVisibleAndClickable("DeleteLink")){
+                web.getElementText("FirstNameLastName").equals(PropertyLoader.loadProperty("first.name") + " " + PropertyLoader.loadProperty("last.name"))
+           ){
             log.info("The new address was saved correctly.");
         } else {
             log.info("The new address was saved incorrectly!\n");
@@ -78,7 +78,7 @@ public class MyAddressesPage extends Page {
     }
 
     public void deleteAddress() {
-        web.clickOnElement("DeleteLink");
+        web.clickEachRemoveLink("DeleteLink");
     }
 
     /*public boolean isAddressDeleted() {

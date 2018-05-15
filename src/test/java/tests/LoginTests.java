@@ -32,7 +32,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test
+    //@Test
     public void emptyFieldsValidationFotLoginForm() {
         extentTest = extentReports
                 .startTest("emptyFieldsValidationFotLoginForm")
@@ -48,7 +48,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test
+    //@Test
     public void invalidDataValidationForEmailWithMissingAt() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForEmailWithMissingAt")
@@ -68,7 +68,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test
+    //@Test
     public void invalidDataValidationForEmailFieldWithMissingAddress() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForEmailFieldWithMissingAddress")
@@ -88,7 +88,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test
+    //@Test
     public void invalidDataValidationForEmailFieldWithSuperfluousText() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForEmailFieldWithSuperfluousText")
@@ -109,7 +109,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test
+    //@Test
     public void invalidDataValidationForEmailFieldCopyPasteFromAddressBookWithName() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForEmailFieldCopyPasteFromAddressBookWithName")
@@ -129,7 +129,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test(enabled = false)
+    //@Test(enabled = false)
     public void invalidDataValidationForEmailFieldWithTwoAt() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForEmailFieldWithTwoAt")
@@ -149,7 +149,7 @@ public class LoginTests extends Fixture {
 
     }
 
-    @Test(enabled = false)
+    //@Test(enabled = false)
     public void invalidDataValidationForEmailFieldSpecialCharacters() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForEmailFieldSpecialCharacters")
@@ -170,7 +170,7 @@ public class LoginTests extends Fixture {
     }
 
 
-    @Test(enabled = false)
+    //@Test(enabled = false)
     public void invalidDataValidationForPasswordField() {
         extentTest = extentReports
                 .startTest("invalidDataValidationForPasswordField")

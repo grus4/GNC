@@ -21,6 +21,7 @@ public class WebElementsActions {
     private static final String EXPLICIT_WAIT = PropertyLoader.loadProperty("selenium.explicit.timeout");
 
     /**
+     * Constructor
      *
      * @param driver
      */
@@ -499,7 +500,7 @@ public class WebElementsActions {
             webDriverWrapper.findElement(UIMappingSingleton.ui(checkboxLocator)).click();
         }
         if (!webDriverWrapper.findElement(UIMappingSingleton.ui(checkboxLocator)).isSelected() && isSet.equals("Y")) {
-            webDriverWrapper.findElement(UIMappingSingleton.ui(checkboxLocator)).click();
+            webDriverWrapper.findElement(UIMappingSingleton.ui(checkboxLocator));
         }
     }
 
@@ -512,6 +513,18 @@ public class WebElementsActions {
      */
     public int getRandom() {
         return (int) (Math.random() * 100000000);
+    }
+
+    /**
+     *  The method which generates a random email
+     *
+     * @return
+     *        String email
+     */
+    public String generateRandomEmail2() {
+        String newEmail = "ktestaccount+5000" + getRandom() + "@gmail.com";
+
+        return newEmail;
     }
 
     /**
@@ -539,5 +552,20 @@ public class WebElementsActions {
         log.info("Click on Element : " + elementLocator);
     }
 
-
+    /**
+     * The method that clicks each remove link of the product in the shopping cart
+     *
+     * @param elementLocator
+     *        String descriptive name of the element - remove link(s) in the Shopping cart
+     */
+    public void clickEachRemoveLink(String elementLocator) {
+        List <WebElement> removeLinks =  webDriverWrapper.findElements(UIMappingSingleton.ui(elementLocator));
+        if (removeLinks.size() > 0) {
+            WebElement element = removeLinks.get(0);
+            element.click();
+            this.clickEachRemoveLink(elementLocator);
+        } else {
+            return;
+        }
+    }
 }

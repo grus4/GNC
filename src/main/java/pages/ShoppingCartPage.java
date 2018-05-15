@@ -13,6 +13,7 @@ public class ShoppingCartPage extends Page{
 
     public void goToLoginCheckoutPage() {
         web.clickButton("BottomCheckoutButton");
+        sleep(3000);
         web.waitForElementIsVisible("CheckoutAsGuest");
         web.waitForElementIsClickable("CheckoutAsGuest");
 

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="PayPalTestSuite" verbose="1" thread-count="1" parallel="tests">
-    <test name="PayPalSmokeTest">
+<suite name="GNC Smoke Tests" verbose="1" thread-count="1" parallel="tests">
+    <test name="GNSSmokeTest">
 
         <classes>
+            <class name="tests.CheckoutRegisteredUser"/>
             <class name="tests.GuestCheckoutTests"/>
             <class name="tests.CreateAccountTests"/>
             <class name="tests.LoginTests"/>
-            <class name="tests.MyAddressesTests"/>
-            <class name="tests.CheckoutRegisteredUser"/>
         </classes>
 
     </test>

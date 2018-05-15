@@ -24,7 +24,7 @@
 
         <!-- global date format override -->
         <!-- defaults to yyyy-MM-dd -->
-        <dateFormat>2017-01-17</dateFormat>
+        <dateFormat>2017-23-03</dateFormat>
 
         <!-- global time format override -->
         <!-- defaults to HH:mm:ss -->

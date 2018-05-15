@@ -22,7 +22,13 @@ public class CreateAccountPage extends Page{
     }
 
     public void fillEmailAndConfirmEmailFields(String email) {
-        String newEmail = web.generateRandomEmail(email);
+        String newEmail = web.generateRandomEmail2();
+        web.input("EmailField", newEmail);
+        web.input("ConfirmEmailField", newEmail);
+    }
+
+    public void fillEmailAndConfirmEmailFields() {
+        String newEmail = web.generateRandomEmail2();
         web.input("EmailField", newEmail);
         web.input("ConfirmEmailField", newEmail);
     }
@@ -37,6 +43,7 @@ public class CreateAccountPage extends Page{
 
     public void clickSaveButton() {
         web.clickOnElement("SaveButton");
+        web.clickOnElement("MyAccountIcon");
 
         web.waitForElementIsVisible("LogoutLinkInMyAccount");
         web.waitForElementIsClickable("LogoutLinkInMyAccount");

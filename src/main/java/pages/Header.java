@@ -27,14 +27,14 @@ public class Header extends Page {
     }
 
     public void logout() {
-        if(web.isElementAvailable("LogOutButton")){
-            web.clickOnElement("LogOutButton");
-
-        } else {
+        if(web.isElementAvailable("MyAccountIcon")){
             web.clickOnElement("MyAccountIcon");
             web.clickOnElement("LogOutButton");
-        }
 
+        } /*else {
+            web.clickOnElement("MyAccountIcon");
+            web.clickOnElement("LogOutButton");
+        }*/
     }
 
     public void goToCreateAccountPage() {

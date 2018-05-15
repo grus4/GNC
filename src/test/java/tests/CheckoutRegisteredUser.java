@@ -70,6 +70,8 @@ public class CheckoutRegisteredUser extends Fixture {
         extentTest.log(LogStatus.INFO, "Switching to the Order Receipt page");
         Assert.assertTrue(gnc.orderReceiptPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
         extentTest.log(LogStatus.INFO, "The order has been created successfully");
+        gnc.header.logout();
+        extentTest.log(LogStatus.INFO, "Logout");
         gnc.header.goToHomePage();
         extentTest.log(LogStatus.INFO, "Switching to Home page");
 
@@ -134,6 +136,8 @@ public class CheckoutRegisteredUser extends Fixture {
         extentTest.log(LogStatus.INFO, "Switching to the Order Receipt page");
         Assert.assertTrue(gnc.orderReceiptPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
         extentTest.log(LogStatus.INFO, "The order has been created successfully");
+        gnc.header.logout();
+        extentTest.log(LogStatus.INFO, "Logout");
         gnc.header.goToHomePage();
         extentTest.log(LogStatus.INFO, "Switching to Home page");
     }

@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 public class CreateAccountTests extends Fixture {
 
 
-    @Test(priority = 1)
+    @Test
     public void createAccountWithValidData() {
         extentTest = extentReports
                 .startTest("createAccountWithValidData")
@@ -56,7 +56,7 @@ public class CreateAccountTests extends Fixture {
 
     }
 
-    @Test(priority = 2)
+    //@Test(priority = 2)
     public void createAccountFormValidation_EmptyFields() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_EmptyFields")
@@ -73,7 +73,7 @@ public class CreateAccountTests extends Fixture {
     }
 
 
-    @Test(priority = 3)
+    //@Test(priority = 3)
     public void createAccountFormValidation_Re_RegisterTheSameUser() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_Re_RegisterTheSameUser")
@@ -119,7 +119,7 @@ public class CreateAccountTests extends Fixture {
         gnc.createAccountPage.deleteAllCookies();
     }
 
-    @Test
+    //@Test (priority = 1)
     public void createAccountFormValidation_With_DifferentEmail_In_Email_And_ConfirmEmail_Fields() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_With_DifferentEmail_In_Email_And_ConfirmEmail_Fields")
@@ -166,7 +166,7 @@ public class CreateAccountTests extends Fixture {
 
     }
 
-    @Test
+    //@Test (priority = 4)
     public void createAccountFormValidation_With_DifferentPassword_And_ConfirmPassword() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_With_DifferentPassword_And_ConfirmPassword")
@@ -210,7 +210,7 @@ public class CreateAccountTests extends Fixture {
         gnc.createAccountPage.deleteAllCookies();
     }
 
-    @Test
+    //@Test (priority = 5)
     public void createAccountFormValidation_PasswordLength() {
         extentTest = extentReports
                 .startTest("createAccountFormValidation_PasswordLength")
